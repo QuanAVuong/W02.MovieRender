@@ -1,0 +1,72 @@
+
+/*
+  Some basic styling to get you started.
+  */
+
+/** {
+	margin: 0;
+	padding: 0;
+}*/
+
+.movie {
+	margin: 10px auto;
+	box-sizing: border-box;
+    border: solid 1px;
+    border-radius: 10px;
+}
+
+.name {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+.year {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.genre {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+li {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.movie .description {
+	padding: 20px;
+	background-color: black;
+	color: white;
+}
+
+
+/*
+  Use the following for genre-specific styling. For example, maybe
+  use a different border color or background color for each genre.
+  */
+.animation {
+	padding: 10px;
+	background-color: #FFD906;
+	color: white;
+	font-family: Helvetica, sans-serif;
+}
+
+.animation .name {
+	color: black;
+}
+
+.action {
+	padding: 10px;
+	background-color: red;
+	color: white;
+	font-family: Helvetica, sans-serif;
+}
+
+.drama {
+	padding: 10px;
+	background-color: purple;
+	color: white;
+	font-family: Helvetica, sans-serif;
+}

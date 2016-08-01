@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week 2, Homework</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script>
+        function render(movieArray, displayWide) {
+            // This function will get called automagically.
+            // Replace this return call with the string of HTML that you
+            // generate:
+            var castStr = "";
+            var i = 5;
+            var returnValue = "";
+            // for (var i = 0; i < movieArray[0].cast.length; i++) {
+            //     castStr += "<li>" + movieArray[0].cast[i] + "</li>";
+            // }
+            movieArray[i].cast.forEach(function(value){
+                castStr += "<li>" + value + "</li>";   
+            });
+
+            returnValue +=  
+                    "<div class='movie " + movieArray[i].genre + "'>" +       
+                          "<h1 class='name'>" + movieArray[i].name + "</h1>" +
+                          "<p>Release date: <span class='year'>" + movieArray[i].year + "</span> <br/>" +
+                                "Genre: <span class='genre'>" + movieArray[i].genre + 
+                          "</span>.</p>" +
+
+                          "<div> Starring:" +
+                                  "<ul>" +
+                                      castStr +
+                                  "</ul>" +
+                          "</div>" 
+
+                          + "<p class='description'>" +
+                                movieArray[i].description + 
+                          "</p>" +
+                    "</div>"
+            ;
+
+            return returnValue; // STATEMENT ON SAME LINE; was broken otherwise
+        }
+    </script>
+
+</head> 
+
+<body>
+</body>
+
+</html>
