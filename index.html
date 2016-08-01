@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Week 2, Homework</title>
+    <title>Week 2: Movie Render</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/jquery-3.1.0.js"></script>
@@ -10,41 +10,60 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <script>
-        function render(movieArray, displayWide) {
-            // This function will get called automagically.
-            // Replace this return call with the string of HTML that you
-            // generate:
-            var castStr = "";
-            var i = 5;
-            var returnValue = "";
-            // for (var i = 0; i < movieArray[0].cast.length; i++) {
-            //     castStr += "<li>" + movieArray[0].cast[i] + "</li>";
-            // }
-            movieArray[i].cast.forEach(function(value){
-                castStr += "<li>" + value + "</li>";   
-            });
+        function renderMovie(movieObj) {
+           var castStr = "";
+           var returnValue = "";
+           // for (var i = 0; i < movieObj[0].cast.length; i++) {
+           //     castStr += "<li>" + movieObj[0].cast[i] + "</li>";
+           // }
+           console.log(typeof movieObj.cast, movieObj.cast);
+           movieObj.cast.forEach(function(value){
+               castStr += "<li>" + value + "</li>";   
+               // console.log('castStr:', castStr)
+           });
 
-            returnValue +=  
-                    "<div class='movie " + movieArray[i].genre + "'>" +       
-                          "<h1 class='name'>" + movieArray[i].name + "</h1>" +
-                          "<p>Release date: <span class='year'>" + movieArray[i].year + "</span> <br/>" +
-                                "Genre: <span class='genre'>" + movieArray[i].genre + 
-                          "</span>.</p>" +
+           returnValue +=  
+                   "<div class='movie " + movieObj.genre + "'>" +       
+                         "<h1 class='name'>" + movieObj.name + "</h1>" +
+                         "<p>Release date: <span class='year'>" + movieObj.year + "</span> <br/>" +
+                               "Genre: <span class='genre'>" + movieObj.genre + 
+                         "</span>.</p>" +
 
-                          "<div> Starring:" +
-                                  "<ul>" +
-                                      castStr +
-                                  "</ul>" +
-                          "</div>" 
+                         "<div> Starring:" +
+                                 "<ul>" +
+                                     castStr +
+                                 "</ul>" +
+                         "</div>" 
 
-                          + "<p class='description'>" +
-                                movieArray[i].description + 
-                          "</p>" +
-                    "</div>"
-            ;
+                         + "<p class='description'>" +
+                               movieObj.description + 
+                         "</p>" +
+                   "</div>"
+           ;
 
-            return returnValue; // STATEMENT ON SAME LINE; was broken otherwise
+           console.log('return', 'returnValue:', typeof returnValue, returnValue)
+           return returnValue; // STATEMENT ON SAME LINE: broken otherwise
         }
+
+        function render(movieArray, displayWide) {
+            console.log('render', 'movieArray:', movieArray, 'displayWide:', displayWide)
+              // This function will get called automagically.
+              // Replace this return call with the string of HTML that you
+              // generate:
+              var htmlStr = "";
+
+              // htmlStr += movieArray.forEach(renderMovie); => // syntax ??
+
+              for (var i = 0; i < movieArray.length; i++) {
+                  htmlStr += renderMovie(movieArray[i]);
+                  
+              }
+
+              // console.log('renderMovie', renderMovie(movieArray[1])); // A STRING. NEEDS TO BE RETURNED
+              console.log('return', 'htmlStr:', htmlStr)
+              return htmlStr;
+        }
+
     </script>
 
 </head> 

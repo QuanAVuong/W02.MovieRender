@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     var html = render(data, window.innerWidth > 500);
+    // console.log('html', html)
 
     $('body').append(html);
 });
