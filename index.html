@@ -45,6 +45,24 @@
            return returnValue; // STATEMENT ON SAME LINE: broken otherwise
         }
 
+        function renderMovieCompact(movieObj) {
+            var returnValue = "";
+            returnValue +=  
+                          "<li class='movie " + movieObj.genre + "'>" +       
+                              "<span class='name'>" + movieObj.name + "</span>" +
+                              "(<span class='year'>" + movieObj.year + "</span>," +
+                              "<span class='genre'>" + movieObj.genre + "</span>)" +
+                              "starring: " + movieObj.cast.toString() + 
+                          "</li>"
+            ;
+
+            console.log('return', 'returnValue:', typeof returnValue, returnValue)
+            return returnValue;
+
+        }
+
+
+
         function render(movieArray, displayWide) {
             console.log('render', 'movieArray:', movieArray, 'displayWide:', displayWide)
               // This function will get called automagically.
@@ -55,7 +73,8 @@
               // htmlStr += movieArray.forEach(renderMovie); => // syntax ??
 
               for (var i = 0; i < movieArray.length; i++) {
-                  htmlStr += renderMovie(movieArray[i]);
+                  // htmlStr += renderMovie(movieArray[i]);
+                  htmlStr += renderMovieCompact(movieArray[i]);
                   
               }
 
