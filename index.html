@@ -14,7 +14,7 @@
            var castStr = "";
            var returnValue = "";
            // for (var i = 0; i < movieObj[0].cast.length; i++) {
-           //     castStr += "<li>" + movieObj[0].cast[i] + "</li>";
+               // castStr += "<li>" + movieObj[0].cast[i] + "</li>";
            // }
            console.log(typeof movieObj.cast, movieObj.cast);
            movieObj.cast.forEach(function(value){
@@ -50,9 +50,9 @@
             returnValue +=  
                           "<li class='movie " + movieObj.genre + "'>" +       
                               "<span class='name'>" + movieObj.name + "</span>" +
-                              "(<span class='year'>" + movieObj.year + "</span>," +
+                              " (<span class='year'>" + movieObj.year + "</span>," +
                               "<span class='genre'>" + movieObj.genre + "</span>)" +
-                              "starring: " + movieObj.cast.toString() + 
+                              " starring: " + movieObj.cast.toString() + 
                           "</li>"
             ;
 
@@ -61,8 +61,6 @@
 
         }
 
-
-
         function render(movieArray, displayWide) {
             console.log('render', 'movieArray:', movieArray, 'displayWide:', displayWide)
               // This function will get called automagically.
@@ -70,13 +68,30 @@
               // generate:
               var htmlStr = "";
 
-              // htmlStr += movieArray.forEach(renderMovie); => // syntax ??
 
-              for (var i = 0; i < movieArray.length; i++) {
-                  // htmlStr += renderMovie(movieArray[i]);
-                  htmlStr += renderMovieCompact(movieArray[i]);
+              movieArray.forEach(function (movieObj){
+                  if (displayWide) {
+                      htmlStr +=  "<div class='big'>" + renderMovie(movieObj) + "</div>"; 
+                  } else {
+                      htmlStr +=  "<div class='small'><ul>" + renderMovieCompact(movieObj) + "</ul></div>"; 
+                  }
+              });
+
+              // if (displayWide) {
+              //     htmlStr = "<div class='big'>" + htmlStr + "</div>";
+              // } else {
+              //     htmlStr = "<div class='small'>" + htmlStr + "</div>";
+              // }
                   
-              }
+
+              // for (var i = 0; i < movieArray.length; i++) {
+              //     if (displayWide === true) {
+              //         htmlStr += renderMovie(movieArray[i]);
+              //     } else {
+              //         htmlStr += renderMovieCompact(movieArray[i]);
+              //     }
+                  
+              // }
 
               // console.log('renderMovie', renderMovie(movieArray[1])); // A STRING. NEEDS TO BE RETURNED
               console.log('return', 'htmlStr:', htmlStr)
