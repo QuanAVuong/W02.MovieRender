@@ -21,6 +21,30 @@
                castStr += "<li>" + value + "</li>";   
                // console.log('castStr:', castStr)
            });
+           var movieName = movieObj.name;
+           var url = '';
+           switch (movieName) {
+            case "Minions": url = "http://i.giphy.com/iUOzkJmvnFfqM.gif";
+            break;
+            case "Shrek": url = "http://i.giphy.com/MDXomrcGshGso.gif" ;
+            break;
+            case "Zootopia": url = "http://i.giphy.com/lczEJRMaGrLpK.gif" ;
+            break;
+            case "Avatar": url = "http://i.giphy.com/3pRBAvAv8notO.gif";
+            break;
+            case "The Dark Knight": url = "http://i.giphy.com/W1Ra2Jr3Bd4BO.gif" ;
+            break;
+            case "Transformers": url = "http://i.giphy.com/A5d7xXa0cBOHS.gif" ;
+            break;
+            case "Titanic": url = "http://i.giphy.com/ZDcCvMqwfGB5m.gif" ;
+            break;
+            case "The Hunger Games": url = "http://i.giphy.com/Hg4U1LBlRD8je.gif" ;
+            break;
+            case "American Sniper": url = "http://i.giphy.com/13b2VtdbtYcF5C.gif" ;
+            break;
+            default: 
+
+           }
 
            returnValue +=  
                    "<div class='movie " + movieObj.genre + "'>" +       
@@ -33,9 +57,11 @@
                                  "<ul>" +
                                      castStr +
                                  "</ul>" +
-                         "</div>" 
+                         "</div>" +
 
-                         + "<p class='description'>" +
+                         "<img src='" + url + "'/>"  +
+
+                         "<p class='description'>" +
                                movieObj.description + 
                          "</p>" +
                    "</div>"
@@ -104,7 +130,7 @@
 
 <body>
     <video loop muted autoplay poster="filmstrip.png" id="bgvid">
-        <source src="filmstrip1.mp" type="video/mp4">
+        <source src="filmstrip1.mp4" type="video/mp4">
     </video>
 </body>
 

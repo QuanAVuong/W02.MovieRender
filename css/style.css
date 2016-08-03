@@ -65,11 +65,16 @@ li.movie {
 }
 
 .movie .description {
+	position: relative;
 	padding: 20px;
 	background-color: black;
 	color: white;
 }
 
+/*img {
+	position: absolute;
+	float: right;
+}*/
 
 /*
   Use the following for genre-specific styling. For example, maybe
