@@ -17,8 +17,9 @@ body {
   -o-background-size: cover;
   background-size: cover;
   box-sizing: border-box;
-  padding: 15%;
+  padding: 5% 20%;
 }
+
 
 .large {
 
@@ -34,7 +35,7 @@ body {
     border: solid 1px;
     border-radius: 10px;
     box-sizing: border-box;
-    padding: 10%;
+    padding: 20%;
     margin: 5%;
 }
 
@@ -58,6 +59,11 @@ li {
 	font-size: 1.2em;
 	font-weight: bold;
 }
+
+li.movie {
+	list-style-type: none; 
+}
+
 .movie .description {
 	padding: 20px;
 	background-color: black;
@@ -92,4 +98,30 @@ li {
 	background-color: purple;
 	color: white;
 	font-family: Helvetica, sans-serif;
+}
+
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -10;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(../filmstrip.png) no-repeat;
+    background-size: cover; 
+}
+
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+
+@media screen and (max-width: 800px) {
+  html { background: url(../filmstrip.png) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
 }
